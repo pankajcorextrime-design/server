@@ -1,3 +1,5 @@
+const dotenv = require("dotenv");
+dotenv.config({ quiet: true });
 const express = require("express");
 const app = express();
 const DB = require("./dbconnect/connectdb");
@@ -5,8 +7,8 @@ const userRoute = require("./route/userRoute");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const PORT = 7777;
-const HOSTNAME = "localhost";
+const PORT = process.env.PORT;
+const HOSTNAME = process.env.HOSTNAME;
 
 app.use(cookieParser());
 app.use(express.json()); // Important for req.body
