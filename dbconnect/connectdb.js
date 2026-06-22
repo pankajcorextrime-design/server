@@ -17,9 +17,7 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const db = async () => {
   try {
-    await mongoose.connect(
-      "mongodb+srv://pankajcorextrime_db_user:5P2vZRbQJD5QreuN@cluster0.0ezev0f.mongodb.net/?appName=Cluster0",
-    );
+    await mongoose.connect(process.env.MONDB_URL);
 
     
   } catch (error) {
