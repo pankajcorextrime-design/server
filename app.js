@@ -14,7 +14,7 @@ app.use(express.json()); // Important for req.body
 // app.use(cors());
 app.use(
   cors({
-    origin: "http://localhost:5173", // React Vite
+    origin: "https://shopingi.netlify.app/", // React Vite
     // origin: "http://localhost:3000", // React CRA
     credentials: true,
   }),
@@ -35,3 +35,4 @@ DB().then(() => {
 // http://127.0.0.1:7777/users
 // https://jsonplaceholder.typicode.com/
 // https://jsonplaceholder.typicode.com/users
+// http://localhost:7777
