@@ -7,8 +7,7 @@ const userRoute = require("./route/userRoute");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 
-const PORT = process.env.PORT;
-const HOSTNAME = process.env.HOSTNAME;
+const PORT = process.env.PORT || 7777;
 
 app.use(cookieParser());
 app.use(express.json()); // Important for req.body
@@ -28,8 +27,8 @@ app.get("/", (req, res) => {
 });
 DB().then(() => {
   console.log("MongoDB Connected Successfully");
-  app.listen(PORT, HOSTNAME, () => {
-    console.log(`Server is running on http://${HOSTNAME}:${PORT}`);
+  app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
   });
 });
 
