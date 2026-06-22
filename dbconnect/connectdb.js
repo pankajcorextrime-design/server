@@ -17,7 +17,7 @@ dns.setServers(["8.8.8.8", "8.8.4.4"]);
 
 const db = async () => {
   try {
-    await mongoose.connect(process.env.MONDB_URL);
+    await mongoose.connect(process.env.MONGODB_URI);
 
     
   } catch (error) {
